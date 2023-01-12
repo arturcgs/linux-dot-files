@@ -42,119 +42,44 @@ mod = "mod4"
 terminal = 'alacritty'
 
 # Color theming
-everforest = {  #271f2d
-    "background":                    "#e9b5f9",
-    "selection":                     "#28273a",
-    "current_screen_border":         "#9c4b6d", # ORANGE
-    "other_screen_border":           "#634e6a",
-    "font_color":                    "#ffffff", # FG1  b8a3df
-    "inactive_font_color":           "#8c7caa", # GREY
-    "this_screen_border":            "#6c334b",
+# https://icolorpalette.com/410179_8530d1_a25ce0_a473ce_a669db
 
-    "purple1": '#2D033B',
-    "purple2": '#810CA8',
-    "purple3": '#C147E9',
-    "purple4": '#E5B8F4',
+everforest = {
+    "font_color":                    "#ffffff",
+    "background":                    "#a460e0",
+    "selection":                     "#361453",
+    "current_screen_border":         "#9c4b6d",
+    "other_screen_border":           "#6a0b0e",
+    "inactive_font_color":           "#919191",
+    "this_screen_border":            "#9c4b6d",
+    "unfocused_window":              "#404040",
 
 
+    # purple palette
+    "purple1":                       "#250d39",
+    "purple2":                       "#4a1b73",
+    "purple3":                       "#6f29ac",
+    "purple4":                       "#934ad3",
+    "purple5":                       "#b583e1",
+    "purple6":                       "#c6a0e8",
 
+    # "purple1": "#250b3b",
+    # "purple2": "#4a1677",
+    # "purple3": "#6f22b3",
+    # "purple4": "#9342db",
+    # "purple5": "#a460e0",
+    # "purple6": "#b57ee6",
 
-    "orange":                        "#ab5277",
-    "grey":                          "#dbe3ff",
-    "bg_blue":                       "#f0000d",
-    "error":                         "#514045",
-    "fg1":                           "#a07ccd",
-    "red":                           "#E67E80",
-    "yellow":                        "#DBBC7F",
-    "green":                         "#A7C080",
-    "aqua":                          "#83C092",
-    "aqua1":                         "#648a6d",
-    "aqua2":                         "#506e57",
-    "blue":                          "#7FBBB3",
-    "purple":                        "#D699B6",
-    "greyblock":                     "#565e65",
-    "greybg":                        "#3a4248",
-    "black":                         "#1d2124"
+    # "purple1": "#260046",
+    # "purple2": "#4c018d",
+    # "purple3": "#7201d4",
+    # "purple4": "#9620fd",
+    # "purple5": "#b767fd",
+    # "purple6": "#c88afe",
+
 }
 
-'''
-rosa bem levinho - c8a3d2#
-'''
 
-#### POPUP MENU ####
-
-
-def show_power_menu(qtile):
-    ''' This function creates a popup menu with options
-    to lock, sleep and shutdown the system.'''
-    controls = [
-        PopupImage(
-            filename="/home/arturcgs/Pictures/icons/lock.png",
-            pos_x=0.15,
-            pos_y=0.1,
-            width=0.1,
-            height=0.5,
-            mouse_callbacks={
-                "Button1": lazy.spawn("betterlockscreen -l")
-            }
-        ),
-        PopupImage(
-            filename="/home/arturcgs/Pictures/icons/sleep.png",
-            pos_x=0.45,
-            pos_y=0.1,
-            width=0.1,
-            height=0.5,
-            mouse_callbacks={
-                "Button1": lazy.spawn("/home/arturcgs/Scripts/qtile/sleep.sh")
-            }
-        ),
-        PopupImage(
-            filename="/home/arturcgs/Pictures/icons/shutdown.png",
-            pos_x=0.75,
-            pos_y=0.1,
-            width=0.1,
-            height=0.5,
-            highlight="A00000",
-            mouse_callbacks={
-                "Button1": lazy.spawn("systemctl poweroff")
-            }
-        ),
-        PopupText(
-            text="Lock",
-            pos_x=0.1,
-            pos_y=0.7,
-            width=0.2,
-            height=0.2,
-            h_align="center"
-        ),
-        PopupText(
-            text="Sleep",
-            pos_x=0.4,
-            pos_y=0.7,
-            width=0.2,
-            height=0.2,
-            h_align="center"
-        ),
-        PopupText(
-            text="Shutdown",
-            pos_x=0.7,
-            pos_y=0.7,
-            width=0.2,
-            height=0.2,
-            h_align="center"
-        ),
-    ]
-
-    layout = PopupRelativeLayout(
-        qtile,
-        width=1000,
-        height=200,
-        controls=controls,
-        background="00000060",
-        initial_focus=None,
-    )
-
-    layout.show(centered=True)
     
 
 #### KEY BINDINGS ####
@@ -221,10 +146,13 @@ keys = [
     Key([], "Print", lazy.spawn("flameshot gui"), desc="Printscreens"),
         
     # menu for lock, sleep, reboot and turnoff
-    Key([mod], "x", lazy.function(show_power_menu)),
+    Key([mod], "x", lazy.spawn("archlinux-logout")),
 	
 	# screen lock
     Key([mod], "l", lazy.spawn("betterlockscreen -l")),
+
+    # toggle floating
+    Key([mod], "f", lazy.window.toggle_floating())
 
 ]
 
@@ -232,16 +160,43 @@ keys = [
 
 #### GROUP SETTINGS ####
 
+'''Cool NerdFont Icons:
+https://www.nerdfonts.com/cheat-sheet
+
+ﭓ
+  ﱦ
+ bacteria
+
+ 
+
+
+ﬨ
+ 
+
+
+ﳝ
+
+
+
+
+ ﰬ ﰭ ﰮ 
+ﰵ   
+'''
+
 
 groups = [
-    Group("Blehh", layout="max"),
-    Group("Bebuh", layout="max"),
-    Group("Abubleh", layout="columns"),
-    Group("Blomp", layout="max"),
-    Group("Bimb", layout="max"),
-    Group("666", layout="max")
+    Group("1", label="", layout="max"),
+    Group("2", label="", layout="max"),
+    Group("3", label="", layout="columns"),
+    Group("4", label="殺", layout="columns"),
+    Group("5", label="異", layout="max"),
+    Group("6", label="", layout="max"),
+    Group("7", label="", layout="max"),
+    Group("8", label="", layout="max"),
+    Group("9", label="", layout="max"),
+
 ]
-group_hotkeys = "123456"
+group_hotkeys = "123456789"
 
 for g, k in zip(groups, group_hotkeys):
     keys.extend(
@@ -277,11 +232,14 @@ layouts = [
     ),
     layout.Columns(
         margin = 5,
-        border_focus_stack=["#d75f5f", "#8f3d3d"],
-        border_width=4
+        border_focus=everforest["purple5"],
+        border_normal=everforest["unfocused_window"],
+        border_width=2
     ),
     layout.TreeTab(margin = 5),
-    # layout.Stack(num_stacks=2),
+    layout.Floating(border_focus=everforest["purple5"],),
+    # layout.Tile(),
+    # layout.Stack(num_stacks=3),
     # layout.Bsp(),
     # layout.Matrix(),
     # layout.MonadTall(),
@@ -304,10 +262,9 @@ def open_pavu():
     
     
 # General Settings
-font_name = ''
 widget_defaults = dict(
-    font='OpenDyslexicMono NF',
-    fontsize=12,
+    font='SpaceMono Nerd Font Mono',
+    style='Bold',
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
@@ -320,7 +277,7 @@ def get_widgets(primary = False):
     if primary:
         bar_sizes = {
             # GroupBox
-            "group_font": 16,
+            "group_font": 22,
             "group_spacing": 0,
 
             # Current Window Name
@@ -331,14 +288,17 @@ def get_widgets(primary = False):
             "battery_width": 17,
 
             # General
-            "widget_font": 12,
+            "widget_font": 13,
             "text_box": 26,
             "spacer": 6,
+
+            # Final widget background color
+            "final_widget_bg_color": everforest["purple4"]
         }
     else:
         bar_sizes = {
             # GroupBox
-            "group_font": 18,
+            "group_font": 26,
             "group_spacing": 5,
 
             # Current Window Name
@@ -349,9 +309,12 @@ def get_widgets(primary = False):
             "battery_width": 22,
 
             # General
-            "widget_font": 14,
+            "widget_font": 15,
             "text_box": 24,
             "spacer": 10,
+
+            # Final widget background color
+            "final_widget_bg_color": everforest["background"]
         }
 
     # creating widgets
@@ -387,7 +350,7 @@ def get_widgets(primary = False):
 
         # GroupBox
         widget.Spacer(
-            length = 2,
+            length = 0,
             background = everforest["purple2"],
         ),
 
@@ -410,15 +373,15 @@ def get_widgets(primary = False):
             padding=-1,
             fontsize=bar_sizes["text_box"],
             foreground=everforest["purple2"],
-            background=everforest["purple3"],
+            background=everforest["background"],
         ),
 
 
 
         # Prompt
         widget.Prompt(
-            sont=font_name,
-            background = everforest["purple3"],
+
+            background = everforest["background"],
             fontsize = bar_sizes["group_font"],
             foreground = everforest["font_color"]
         ),
@@ -428,7 +391,6 @@ def get_widgets(primary = False):
         widget.WindowName(
             max_chars=bar_sizes["max_chars"],
             fontsize = bar_sizes["widget_font"],
-            font = font_name,
             foreground = everforest["font_color"],
             background = everforest["background"]
         ),
@@ -445,49 +407,44 @@ def get_widgets(primary = False):
             text="",
             padding=-1,
             fontsize=bar_sizes["text_box"],
-            foreground=everforest["greyblock"],
-            background=everforest["background"],
+            foreground=everforest["purple3"],
+            background=bar_sizes["final_widget_bg_color"],
         ),
 
         widget.WidgetBox(
             widgets = [
                 widget.Memory(
                     measure_mem='G',
-                    format='Mem: {MemUsed: .1f}{mm}/{MemTotal: .1f}{mm}',
-                    background=everforest["greyblock"],
+                    format='Mem: {MemUsed:.1f}{mm}/{MemTotal:.1f}{mm} |',
+                    background=everforest["purple3"],
                     foreground=everforest["font_color"],
                     fontsize=bar_sizes["widget_font"]
                 ),
                 widget.CPU(
-                    format='CPU: {freq_current}GHz {load_percent}%',
-                    background=everforest["greyblock"],
+                    format='CPU: {freq_current}GHz/{load_percent}% |',
+                    background=everforest["purple3"],
                     foreground=everforest["font_color"],
                     fontsize=bar_sizes["widget_font"]
                 ),
                 widget.ThermalSensor(
-                    background=everforest["greyblock"],
+                    background=everforest["purple3"],
                     foreground=everforest["font_color"],
                     fontsize=bar_sizes["widget_font"]
                 )
             ],
-            background = everforest["greyblock"],
+            background = everforest["purple3"],
             foreground = everforest["font_color"],
+            fontsize=bar_sizes["widget_font"],
             text_closed = "PC Utilities",
+            close_button_location = "right"
 
 
         ),
 
-        widget.TextBox(
-            text="",
-            padding=-1,
-            fontsize=bar_sizes["text_box"],
-            foreground=everforest["greyblock"],
-            background=everforest["background"],
-        ),
 
         widget.Spacer(
             length=bar_sizes["spacer"],
-            background=everforest["background"],
+            background=everforest["purple3"],
         ),
 
 
@@ -497,85 +454,65 @@ def get_widgets(primary = False):
             text ="",
             padding =-1,
             fontsize =bar_sizes["text_box"],
-            foreground=everforest["greyblock"],
-            background=everforest["background"],
+            foreground=everforest["purple2"],
+            background=everforest["purple3"],
         ),
                       
         widget.UPowerWidget(
-            background=everforest["greyblock"],
+            background=everforest["purple2"],
             battery_height = bar_sizes["battery_height"],
-            battery_width = bar_sizes["battery_width"]
+            battery_width = bar_sizes["battery_width"],
+            fontsize=bar_sizes["widget_font"]
         ),
 
         widget.Battery(
-            font = font_name,
             update_delay = 5,
             foreground = everforest["font_color"],
-            background = everforest["greyblock"],
+            background = everforest["purple2"],
             fontsize = bar_sizes["widget_font"],
             full_char = "",
-            charge_char = "↑",
-            discharge_char = "↓",
-            format = " {char} {percent:2.0%}",
+            charge_char = "",
+            discharge_char = "",
+            format = "{char} {percent:2.0%}",
             notify_below = 15,
+            unknown_char = ""
             ),
 
-        widget.TextBox(
-            text="",
-            padding=-1,
-            fontsize=bar_sizes["text_box"],
-            foreground=everforest["greyblock"],
-            background=everforest["background"],
-        ),
 
         widget.Spacer(
             length = bar_sizes["spacer"],
-            background = everforest["background"],
+            background = everforest["purple2"],
         ),
 
 
 
-        # Backlight 
-        widget.TextBox(
-            text ="",
-            padding =-1,
-            fontsize=bar_sizes["text_box"],
-            foreground=everforest["greybg"],
-            background=everforest["background"],
-        ),
-
+        # Backlight
         widget.Backlight(
-            fmt = "盛  {}",
-            font = font_name,
+            fmt = "盛  {}",
+            font="SpaceMono Nerd Font",
             backlight_name = "intel_backlight",
             brightness_file = "actual_brightness",
             change_command = "brightnessctl s {0}%",
             foreground = everforest["font_color"],
-            background = everforest["greybg"],
+            background = everforest["purple2"],
+            fontsize=bar_sizes["widget_font"],
             step = 5
         ),
 
         widget.Spacer(
             length = bar_sizes["spacer"],
-            background = everforest["purple3"],
+            background = everforest["purple2"],
         ),
 
 
 
         # Volume 
-        widget.TextBox(
-            text ="",
-            padding =-1,
-            fontsize =bar_sizes["text_box"],
-            foreground=everforest["purple2"],
-            background=everforest["purple3"],
-        ),
-
         widget.Volume(
-            fmt = "🔊 {}",
-            font = font_name,
-            foreground = everforest["fg1"],
+            fmt = "墳  {}",
+            font = "SpaceMono Nerd Font",
+            foreground = everforest["font_color"],
             background = everforest["purple2"],
+            fontsize=bar_sizes["widget_font"],
             mouse_callbacks={'Button1': open_pavu},
             volume_app = "pavucontrol"
         ),
@@ -590,71 +527,47 @@ def get_widgets(primary = False):
         # Date and time
         widget.TextBox(
             text="",
-            padding=0,
+            padding=-1,
             fontsize=bar_sizes["text_box"],
             foreground=everforest["purple1"],
             background=everforest["purple2"],
         ),
 
         widget.Clock(
-            format="%d-%m-%Y %a, %I:%M",
-            font = font_name,
-            foreground = everforest["fg1"],
-            background = everforest["purple1"]
+            format="%d-%m-%Y %a, %H:%m ",
+            foreground = everforest["font_color"],
+            background = everforest["purple1"],
+            fontsize=bar_sizes["widget_font"],
         ),
-
-
-
-
-
-        # Shutdown
-        widget.QuickExit(
-            default_text='[X]',
-            countdown_format='[{}s]',
-            foreground=everforest["font_color"],
-            background=everforest["background"],
-        ),
-
     ]
 
     if primary:
         # Systray Widget
         widgets.insert(
-            6,
+            8,
             widget.TextBox(
                 text = "",
                 padding = -1,
                 fontsize = bar_sizes["text_box"],
-                foreground = everforest["greybg"],
-                background = everforest["background"],
-            )
-        )
-
-        widgets.insert(
-            7,
-            widget.Systray(
-                background = everforest["greybg"],
-                padding = 5,
-                icon_size = 18
-            )
-        )
-
-        widgets.insert(
-            8,
-            widget.TextBox(
-                text = "",
-                padding = -1,
-                fontsize = bar_sizes["text_box"],
-                foreground = everforest["greybg"],
+                foreground = everforest["purple4"],
                 background = everforest["background"],
             )
         )
 
         widgets.insert(
             9,
+            widget.Systray(
+                background = everforest["purple4"],
+                padding = 5,
+                icon_size = 18
+            )
+        )
+
+        widgets.insert(
+            10,
             widget.Spacer(
                 length = bar_sizes["spacer"],
-                background = everforest["background"]
+                background = everforest["purple4"]
             )
         )
     return widgets
@@ -681,7 +594,9 @@ screens = [
     Screen(
         top=bar.Bar(
             get_widgets(primary = False),
-            28, opacity = 1, margin = [6,6,0,6]
+            28,
+            opacity = 1,
+            margin = [6,6,0,6]
             #border_width=[0, 0, 2, 0],  # Draw top and bottom borders
             #border_color=["ff00ff", "000000", everforest["greybg"], "000000"]  # Borders are magenta
         ),
