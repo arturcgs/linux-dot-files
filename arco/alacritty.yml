@@ -283,9 +283,9 @@ colors:
   normal:
     black:   '#3f3f3f'
     red:     '#cc0000'
-    green:   '#4e9a06'
+    green:   '#e888bb'
     yellow:  '#c4a000'
-    blue:    '#94bff3'
+    blue:    '#b258ff'
     magenta: '#85678f'
     cyan:    '#06989a'
     white:   '#dcdccc'
