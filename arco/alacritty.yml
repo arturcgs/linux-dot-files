@@ -1,3 +1,4 @@
+# /home/arturcgs/.config/alacritty/alacritty.yml
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Import additional configuration files
@@ -278,17 +279,18 @@ colors:
   #selection:
   #  text: CellBackground
   #  background: CellForeground
-
+  # e888bb
   # Normal colors
   normal:
     black:   '#3f3f3f'
     red:     '#cc0000'
-    green:   '#e888bb'
+    green:   '#bed4f8'
     yellow:  '#c4a000'
     blue:    '#b258ff'
     magenta: '#85678f'
     cyan:    '#06989a'
     white:   '#dcdccc'
+
 
   # Bright colors
   bright:

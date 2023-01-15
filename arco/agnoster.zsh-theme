@@ -208,7 +208,7 @@ prompt_hg() {
         prompt_segment yellow black
         st='±'
       else
-        prompt_segment green $CURRENT_FG
+        prompt_segment white $CURRENT_FG
       fi
       echo -n "☿ ${rev:gs/%/%%}@${branch:gs/%/%%}" $st
     fi
@@ -267,8 +267,8 @@ build_prompt() {
   prompt_hg
   prompt_end
 }
-
+#
 PROMPT='%{$fg_bold[blue]%}┌─%{%f%b%k%}$(build_prompt)
-%{$fg_bold[blue]%}└─%(?.%F{blue} '
+%{$fg_bold[blue]%}└─%{$fg_bold[blue]%} '
 
 
