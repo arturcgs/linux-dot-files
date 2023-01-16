@@ -14,7 +14,7 @@ run xrandr --output eDP-1-1 --primary --mode 1366x768 --pos 0x0 --rotate normal 
 run feh --bg-scale /home/arturcgs/HDD/Pictures/wallpaper/soviet_space.png
 
 # autolock
-run xautolock -time 15 -locker "/home/arturcgs/Scripts/qtile/sleep.sh" -detectsleep
+xautolock -time 15 -locker "systemctl suspend" -detectsleep &
 
 # run picom
 run picom -b --experimental-backends --config ~/.config/qtile/picom.conf
