@@ -509,7 +509,7 @@ def get_widgets(primary=False):
         ),
 
         widget.Clock(
-            format="%d-%m-%Y %a, %H:%m ",
+            format="%d-%m-%Y %a, %H:%M ",
             foreground=color_theme["font_color"],
             background=color_theme["purple1"],
             fontsize=bar_sizes["widget_font"],
