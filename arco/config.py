@@ -113,12 +113,7 @@ keys = [
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key(
-        [mod, "shift"],
-        "Return",
-        lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack",
-    ),
+    Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
@@ -126,7 +121,7 @@ keys = [
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Open rofi"),
 
     ## CUSTOM ##
 
@@ -151,8 +146,9 @@ keys = [
     # menu for lock, sleep, reboot and turnoff
     Key([mod], "x", lazy.spawn("archlinux-logout")),
 
-    # screen lock
-    Key([mod], "l", lazy.spawn("betterlockscreen -l")),
+    # screen lock and sleep
+    Key([mod], "p", lazy.spawn("betterlockscreen -l")),
+    Key([mod, "shift"], "p", lazy.spawn("systemctl suspend")),
 
     # toggle floating
     Key([mod], "f", lazy.window.toggle_floating())
