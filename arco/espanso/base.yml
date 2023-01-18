@@ -28,3 +28,7 @@ matches:
   # sci-hub
   - trigger: ":sc"
     replace: "https://sci-hub.se/"
+
+  # git commit
+  - trigger: ":com"
+    replace: 'git commit -m ""'
