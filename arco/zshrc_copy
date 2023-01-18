@@ -297,6 +297,7 @@ alias temp="cd ~/HDD/Temporario"
 alias 100-days="cd ~/code/personal/100-days-of-code"
 alias gcode="cd ~/code/personal/gcode"
 alias masters="cd ~/code/work/masters"
+alias arco-dot="~/code/personal/linux/arco/"
 
 # run scripts
 alias autostart-run="$EDITOR ~/Scripts/qtile/autostart.sh"
@@ -308,6 +309,9 @@ alias code="codium"
 alias conda-a="conda activate "
 alias conda-d="conda deactivate"
 
+# arco dot files github
+alias arco-dot="cd ~/code/personal/linux/arco"
+alias save-dot-files="sudo bash ~/Scripts/general/save_dot_files.sh"
 
 
 #create a file called .zshrc-personal and put all your personal aliases

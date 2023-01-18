@@ -118,10 +118,10 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: FantasqueSansMono Nerd Font Mono
+    family: hack
 
     # The `style` can be specified to pick a specific face.
-    style: Regular
+    style: Bold
 
   # Bold font face
   bold:
@@ -279,18 +279,17 @@ colors:
   #selection:
   #  text: CellBackground
   #  background: CellForeground
-  # e888bb
+  # b258ff bed4f8
   # Normal colors
   normal:
     black:   '#3f3f3f'
     red:     '#cc0000'
-    green:   '#bed4f8'
+    green:   '#d8baf3'
     yellow:  '#c4a000'
-    blue:    '#b258ff'
+    blue:    '#9623fb'
     magenta: '#85678f'
     cyan:    '#06989a'
     white:   '#dcdccc'
-
 
   # Bright colors
   bright:
