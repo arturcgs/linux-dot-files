@@ -310,6 +310,12 @@ alias code="codium"
 alias conda-a="conda activate "
 alias conda-d="conda deactivate"
 
+# don't stay stuck in terminal
+alias nt="setsid"
+
+# ultimaker cura
+alias cura="setsid ~/HDD/Downloads/Ultimaker-Cura-5.2.1-linux.AppImage"
+
 
 
 
