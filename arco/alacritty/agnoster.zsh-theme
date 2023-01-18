@@ -1,5 +1,5 @@
 # /usr/share/oh-my-zsh/themes/agnoster.zsh-theme
-# 
+#
 # vim:ft=zsh ts=2 sw=2 sts=2
 #
 # agnoster's Theme - https://gist.github.com/3712874
@@ -11,7 +11,7 @@
 # [Powerline-patched font](https://github.com/Lokaltog/powerline-fonts).
 # Make sure you have a recent version: the code points that Powerline
 # uses changed in 2012, and older versions will display incorrectly,
-# in confusing wayss.
+# in confusing ways.
 #
 # In addition, I recommend the
 # [Solarized theme](https://github.com/altercation/solarized/) and, if you're

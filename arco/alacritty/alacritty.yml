@@ -1,6 +1,5 @@
 # /home/arturcgs/.config/alacritty/alacritty.yml
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
-# 
 
 # Import additional configuration files
 #
@@ -9,7 +8,7 @@
 # will be replaced.
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
-# to the user's home directory starting wiith `~/`.
+# to the user's home directory starting with `~/`.
 #import:
 #  - /path/to/alacritty.yml
 
