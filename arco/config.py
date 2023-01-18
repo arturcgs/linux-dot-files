@@ -192,9 +192,38 @@ groups = [
     Group("9", label="", layout="columns"),
 
 ]
+
+# add group hotkeys for numbers
 group_hotkeys = "123456789"
 
 for g, k in zip(groups, group_hotkeys):
+    keys.extend(
+        [
+            # mod1 + letter of group = switch to group
+            Key(
+                [mod],
+                k,
+                lazy.group[g.name].toscreen(),
+                desc="Switch to group {}".format(g.name),
+            ),
+            # mod1 + shift + letter of group = switch to & move focused window to group
+            Key(
+                [mod, "shift"],
+                k,
+                lazy.window.togroup(g.name, switch_group=False),
+                desc="Switch to & move focused window to group {}".format(g.name),
+            ),
+            # Or, use below if you prefer not to switch to that group.
+            # # mod1 + shift + letter of group = move focused window to group
+            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+            #     desc="move focused window to group {}".format(i.name)),
+        ]
+    )
+
+# add group hotkeys for numpad numbers
+group_numpad_hotkeys = ["KP_End", "KP_Down", "KP_Next", "KP_Left", "KP_Begin", "KP_Right", "KP_Home","KP_Up", "KP_Prior"]
+
+for g, k in zip(groups, group_numpad_hotkeys):
     keys.extend(
         [
             # mod1 + letter of group = switch to group
@@ -598,7 +627,8 @@ floating_layout = layout.Floating(
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
-    ]
+    ],
+    border_focus=color_theme["purple5"]
 )
 auto_fullscreen = True
 focus_on_window_activation = "smart"
