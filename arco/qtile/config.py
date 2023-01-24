@@ -137,6 +137,7 @@ keys = [
 
     # print screen
     Key([], "Print", lazy.spawn("flameshot gui"), desc="Printscreens"),
+    Key([mod, "shift"], "s", lazy.spawn("flameshot gui"), desc="Printscreens"),
 
     # music controller
     # if it pauses/plays the wrong thing sometimes, add the payerctl daemon to the autostart file.

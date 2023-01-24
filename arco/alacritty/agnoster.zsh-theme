@@ -1,5 +1,3 @@
-# /usr/share/oh-my-zsh/themes/agnoster.zsh-theme
-#
 # vim:ft=zsh ts=2 sw=2 sts=2
 #
 # agnoster's Theme - https://gist.github.com/3712874
@@ -115,7 +113,7 @@ prompt_git() {
     if [[ -n $dirty ]]; then
       prompt_segment yellow black
     else
-      prompt_segment green black
+      prompt_segment green $CURRENT_FG
     fi
 
     local ahead behind
@@ -208,7 +206,7 @@ prompt_hg() {
         prompt_segment yellow black
         st='±'
       else
-        prompt_segment white $CURRENT_FG
+        prompt_segment green $CURRENT_FG
       fi
       echo -n "☿ ${rev:gs/%/%%}@${branch:gs/%/%%}" $st
     fi
@@ -223,7 +221,7 @@ prompt_dir() {
 # Virtualenv: current working virtualenv
 prompt_virtualenv() {
   if [[ -n "$VIRTUAL_ENV" && -n "$VIRTUAL_ENV_DISABLE_PROMPT" ]]; then
-    prompt_segment red white "(${VIRTUAL_ENV:t:gs/%/%%})"
+    prompt_segment blue black "(${VIRTUAL_ENV:t:gs/%/%%})"
   fi
 }
 
@@ -267,8 +265,5 @@ build_prompt() {
   prompt_hg
   prompt_end
 }
-#
-PROMPT='%{$fg_bold[blue]%}┌─%{%f%b%k%}$(build_prompt)
-%{$fg_bold[blue]%}└─%{$fg_bold[blue]%} '
 
-
+PROMPT='%{%f%b%k%}$(build_prompt) '
