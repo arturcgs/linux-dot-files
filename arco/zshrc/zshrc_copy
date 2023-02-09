@@ -294,10 +294,11 @@ alias espanso-config="$EDITOR /home/arturcgs/.config/espanso/match/base.yml"
 alias doc="cd ~/HDD/Documents"
 alias down="cd ~/HDD/Downloads"
 alias temp="cd ~/HDD/Temporario"
-alias 100-days="cd ~/code/personal/100-days-of-code"
+alias 100_days="cd ~/code/personal/100-days-of-code"
 alias gcode="cd ~/code/personal/gcode"
 alias masters="cd ~/code/work/masters"
 alias arco-dot="cd ~/code/personal/linux/arco"
+alias lipinski="cd /home/arturcgs/code/work/masters/masters-shared-side-projects/Lipinski"
 
 # run scripts
 alias autostart-run="bash ~/Scripts/qtile/autostart.sh"
@@ -309,6 +310,7 @@ alias code="codium"
 # conda shortcuts
 alias conda-a="conda activate "
 alias conda-d="conda deactivate"
+alias conda-base="conda activate basic"
 
 # don't stay stuck in terminal
 alias nt="setsid"

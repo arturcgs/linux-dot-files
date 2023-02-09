@@ -264,7 +264,6 @@ layouts = [
         border_normal_stack=color_theme["font_color"],
         insert_position=1,
     ),
-    layout.TreeTab(margin=5),
     layout.Floating(border_focus=color_theme["purple5"], ),
     # layout.Stack(num_stacks=3),
     # layout.Bsp(),
