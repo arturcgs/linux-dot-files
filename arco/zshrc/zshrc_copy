@@ -294,17 +294,19 @@ alias espanso-config="$EDITOR /home/arturcgs/.config/espanso/match/base.yml"
 alias doc="cd ~/HDD/Documents"
 alias down="cd ~/HDD/Downloads"
 alias temp="cd ~/HDD/Temporario"
-alias 100days="cd ~/code/personal/100-days-of-code"
+alias 100days="cd ~/code/personal/100-days-of-code/Projects"
 alias gcode="cd ~/code/personal/gcode"
-alias masters="cd /home/arturcgs/code/work/masters-project"
+alias masters="cd /home/arturcgs/code/work/masters-project/main_project/"
 alias dot-files="cd ~/code/personal/linux/arco"
 
 # run scripts
 alias autostart-run="bash ~/Scripts/qtile/autostart.sh"
 alias save-dot-files="sudo bash ~/Scripts/general/save_dot_files.sh"
+alias fix-alacritty="sudo bash /home/arturcgs/Scripts/general/fix_alacritty.sh"
 
-# codium shortcut
+# program shortcut
 alias code="codium"
+alias word="libreoffice"
 
 # conda shortcuts
 alias conda-a="conda activate "
@@ -316,6 +318,9 @@ alias nt="setsid"
 
 # ultimaker cura
 alias cura="setsid ~/HDD/Downloads/Ultimaker-Cura-5.2.1-linux.AppImage"
+
+# gbcc games
+alias pokemon-gold="gbcc /home/arturcgs/HDD/Downloads/gbcc/Pokemon\ -\ Gold\ Version\ \(UE\)\ \[C\]\[\!\].gbc"
 
 
 

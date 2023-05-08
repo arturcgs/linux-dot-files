@@ -115,7 +115,8 @@ keys = [
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal big enter"),
+    Key([mod], "KP_Enter", lazy.spawn(terminal), desc="Launch terminal numpad enter"),
 
     # Toggle between different layouts as defined below
     Key([mod, "shift"], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -150,7 +151,7 @@ keys = [
 
     # screen lock and sleep
     Key([mod], "p", lazy.spawn("betterlockscreen -l")),
-    Key([mod, "shift"], "p", lazy.spawn("systemctl suspend")),
+    Key([mod, "shift"], "p", lazy.spawn("bash /home/arturcgs/Scripts/qtile/suspend.sh")),
 
     # toggle floating
     Key([mod], "f", lazy.window.toggle_floating())
@@ -184,7 +185,7 @@ https://www.nerdfonts.com/cheat-sheet
 
 groups = [
     Group("1", label="", layout="max"),
-    Group("2", label="", layout="max"),
+    Group("2", label="", layout="treetab"),
     Group("3", label="", layout="columns"),
     Group("4", label="殺", layout="columns"),
     Group("5", label="異", layout="columns"),
@@ -264,13 +265,26 @@ layouts = [
         border_normal_stack=color_theme["font_color"],
         insert_position=1,
     ),
-    layout.Floating(border_focus=color_theme["purple5"], ),
-    # layout.Stack(num_stacks=3),
+    layout.TreeTab(
+        bg_color="#262527",
+        active_bg=color_theme['purple2'],
+        inactive_fg="#969696",
+        inactive_bg="#141414b5",
+        panel_width=70,
+        section_top=4,
+    ),
+    layout.Floating(border_focus=color_theme["purple5"]),
+    
+    
     # layout.Bsp(),
     # layout.Matrix(),
     # layout.MonadTall(),
+    # layout.MonadThreeCol(),
     # layout.MonadWide(),
     # layout.RatioTile(),
+    # layout.Slice(),
+    # layout.Spiral(),
+    # layout.Stack(num_stacks=3),
     # layout.Tile(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
