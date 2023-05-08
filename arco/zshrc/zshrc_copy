@@ -298,6 +298,7 @@ alias 100days="cd ~/code/personal/100-days-of-code/Projects"
 alias gcode="cd ~/code/personal/gcode"
 alias masters="cd /home/arturcgs/code/work/masters-project/main_project/"
 alias dot-files="cd ~/code/personal/linux/arco"
+alias gdrive="cd /home/arturcgs/HDD/GDrive"
 
 # run scripts
 alias autostart-run="bash ~/Scripts/qtile/autostart.sh"

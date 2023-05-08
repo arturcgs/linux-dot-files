@@ -154,7 +154,10 @@ keys = [
     Key([mod, "shift"], "p", lazy.spawn("bash /home/arturcgs/Scripts/qtile/suspend.sh")),
 
     # toggle floating
-    Key([mod], "f", lazy.window.toggle_floating())
+    Key([mod], "f", lazy.window.toggle_floating()),
+
+    # open thunar
+    Key(["control"], "e", lazy.spawn("thunar")),
 
 ]
 
@@ -254,9 +257,11 @@ for g, k in zip(groups, group_numpad_hotkeys):
 
 
 layouts = [
+
     layout.Max(
         margin=5
     ),
+
     layout.Columns(
         margin=5,
         border_focus=color_theme["purple5"],
@@ -265,6 +270,7 @@ layouts = [
         border_normal_stack=color_theme["font_color"],
         insert_position=1,
     ),
+
     layout.TreeTab(
         bg_color="#262527",
         active_bg=color_theme['purple2'],
@@ -273,6 +279,7 @@ layouts = [
         panel_width=70,
         section_top=4,
     ),
+
     layout.Floating(border_focus=color_theme["purple5"]),
     
     
@@ -461,7 +468,7 @@ def get_widgets(primary=False):
             background=color_theme["purple3"],
             foreground=color_theme["font_color"],
             fontsize=bar_sizes["widget_font"],
-            text_closed="PC Utilities",
+            text_closed="Vitals",
             close_button_location="right"
 
         ),
