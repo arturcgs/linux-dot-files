@@ -104,6 +104,8 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 
+
+
 ####   ARCOLINUX SETTINGS   ####
 export PAGER='most'
 
@@ -123,8 +125,8 @@ export HISTCONTROL=ignoreboth:erasedups
 
 # Make codium the default editor
 
-export EDITOR='codium'
-export VISUAL='codium'
+export EDITOR='code'
+export VISUAL='code'
 
 #PS1='[\u@\h \W]\$ '
 
@@ -294,8 +296,8 @@ alias espanso-config="$EDITOR /home/arturcgs/.config/espanso/match/base.yml"
 alias doc="cd ~/HDD/Documents"
 alias down="cd ~/HDD/Downloads"
 alias temp="cd ~/HDD/Temporario"
-alias 100days="cd ~/code/personal/100-days-of-code/Projects"
-alias gcode="cd ~/code/personal/gcode"
+alias 100days="cd ~/code/personal/100-days-of-code/Professional_Portfolio"
+alias medpet="cd ~/code/personal/m3dpet"
 alias masters="cd /home/arturcgs/code/work/masters-project/main_project/"
 alias dot-files="cd ~/code/personal/linux/arco"
 alias gdrive="cd /home/arturcgs/HDD/GDrive"
@@ -304,9 +306,9 @@ alias gdrive="cd /home/arturcgs/HDD/GDrive"
 alias autostart-run="bash ~/Scripts/qtile/autostart.sh"
 alias save-dot-files="sudo bash ~/Scripts/general/save_dot_files.sh"
 alias fix-alacritty="sudo bash /home/arturcgs/Scripts/general/fix_alacritty.sh"
+alias daily-open="bash /home/arturcgs/Scripts/general/daily_run.sh"
 
 # program shortcut
-alias code="codium"
 alias word="libreoffice"
 
 # conda shortcuts
