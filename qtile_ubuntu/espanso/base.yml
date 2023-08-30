@@ -1,0 +1,38 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Print the current date
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d/%m/%Y"
+  
+  # Name
+  - trigger: ":nm"
+    replace: "Artur Caminero Gomes Soares"
+
+  # email
+  - trigger: ":ml"
+    replace: "arturcaminero@gmail.com"
+
+  # sci-hub
+  - trigger: ":sc"
+    replace: "https://sci-hub.se/"
+
+  # git commit
+  - trigger: ":com"
+    replace: 'git commit -m ""'
+
+  # final email
+  - trigger: ":final"
+    replace: 'Grato,\nArtur C.'
