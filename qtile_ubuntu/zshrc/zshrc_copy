@@ -124,6 +124,7 @@ alias fgrep='fgrep --color=auto'
 alias alacritty-config="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias alacritty-theme-config="$EDITOR ~/.oh-my-zsh/themes/agnoster.zsh-theme"
 alias qtile-config="$EDITOR ~/.config/qtile/config.py"
+alias autostart-config="$EDITOR ~/Scripts/qtile/autostart.sh"
 alias picom-config="$EDITOR ~/.config/qtile/picom.conf"
 alias zshell-config="$EDITOR ~/.zshrc"
 alias rofi-config="$EDITOR ~/.config/rofi/config.rasi"
@@ -131,10 +132,11 @@ alias rofi-config="$EDITOR ~/.config/rofi/config.rasi"
 # important folders
 alias doc="cd ~/HDD/Documents"
 alias temp="cd ~/HDD/Temporario"
+alias scripts="cd ~/Scripts"
 alias 100days="cd /home/artur/code/100-days-of-code"
 alias masters="cd /home/artur/code/masters-project/main_project"
 alias dot-files="cd /home/artur/Documents/linux-dot-files"
-#alias gdrive="cd /home/arturcgs/HDD/GDrive"
+alias gdrive="cd /home/artur/HDD/GDrive"
 #alias medpet="cd ~/code/personal/m3dpet"
 
 # run scripts
@@ -150,6 +152,9 @@ alias conda-d="conda deactivate"
 # codium
 alias code="codium"
 
+# arandr
+alias display="arandr"
+
 # don't stay stuck in terminal
 alias nt="setsid"
 
@@ -157,3 +162,23 @@ alias nt="setsid"
 
 # ufetch
 bash /home/artur/Scripts/ufetch/ufetch.sh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/artur/Programs/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/artur/Programs/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/artur/Programs/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/artur/Programs/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/artur/Programs/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/home/artur/Programs/mambaforge/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+

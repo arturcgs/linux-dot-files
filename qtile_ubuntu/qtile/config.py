@@ -151,8 +151,8 @@ keys = [
     # toggle floating
     Key([mod], "f", lazy.window.toggle_floating()),
 
-    # open thunar
-    Key([mod], "e", lazy.spawn("thunar")),
+    # open file manager
+    Key([mod], "e", lazy.spawn("nautilus")),
 
     # run autostart
     Key([mod, "control"], "a", lazy.spawn("bash /home/artur/Scripts/qtile/autostart.sh"))

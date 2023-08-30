@@ -1,6 +1,9 @@
 #!/bin/sh
 
+# backup logseq
 echo fazendo backup do logseq...
-cp -ru /home/arturcgs/HDD/Documents/logseq /home/arturcgs/HDD/GDrive/pessoal
+cp -ru /home/artur/HDD/Documents/logseq /home/artur/HDD/GDrive/pessoal
 echo backup finalizado
-sudo pacman -Syyu
+
+# update e upgrade
+sudo apt update -y && sudo apt upgrade -y
