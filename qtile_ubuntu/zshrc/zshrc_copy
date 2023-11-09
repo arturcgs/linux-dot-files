@@ -135,7 +135,7 @@ alias temp="cd ~/HDD/Temporario"
 alias scripts="cd ~/Scripts"
 alias 100days="cd /home/artur/code/100-days-of-code"
 alias masters="cd /home/artur/code/masters-project/main_project"
-alias dot-files="cd /home/artur/Documents/linux-dot-files"
+alias dot-files="cd /home/artur/Documents/linux-dot-files/qtile_ubuntu"
 alias gdrive="cd /home/artur/HDD/GDrive"
 #alias medpet="cd ~/code/personal/m3dpet"
 
