@@ -178,7 +178,11 @@ keys = [
 
     # run autostart
     Key([mod, "control"], "a", lazy.spawn("bash /home/artur/Scripts/qtile/autostart-ultra-wide.sh")),
-    Key([mod, "control"], "s", lazy.spawn("bash /home/artur/Scripts/qtile/autostart-normal.sh"))
+    Key([mod, "control"], "s", lazy.spawn("bash /home/artur/Scripts/qtile/autostart-normal.sh")),
+
+    # copy without line break
+    Key([mod, "control"], "c", lazy.spawn("bash /home/artur/Scripts/general/copy_without_line_breaks.sh"), desc="Copy without line break"),
+    
 
 ]
 
