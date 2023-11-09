@@ -26,3 +26,6 @@ cp /home/artur/.config/espanso/match/base.yml /home/artur/Documents/linux-dot-fi
 
 ## SCRIPTS ##
 cp -r /home/artur/Scripts/* /home/artur/Documents/linux-dot-files/qtile_ubuntu/scripts
+
+## PICTURES ##
+cp -r /home/artur/Pictures/* /home/artur/Documents/linux-dot-files/qtile_ubuntu/pictures
