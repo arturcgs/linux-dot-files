@@ -2,7 +2,8 @@
 
 ## QTILE ##
 cp /home/artur/.config/qtile/config.py /home/artur/Documents/linux-dot-files/qtile_ubuntu/qtile/config.py
-cp /home/artur/Scripts/qtile/autostart.sh /home/artur/Documents/linux-dot-files/qtile_ubuntu/qtile/autostart.sh
+cp /home/artur/Scripts/qtile/autostart-ultra-wide.sh /home/artur/Documents/linux-dot-files/qtile_ubuntu/qtile/autostart-ultra-wide.sh
+cp /home/artur/Scripts/qtile/autostart-normal.sh /home/artur/Documents/linux-dot-files/qtile_ubuntu/qtile/autostart-normal.sh
 
 ## ALACRITTY ##
 cp /home/artur/.config/alacritty/alacritty.yml /home/artur/Documents/linux-dot-files/qtile_ubuntu/alacritty

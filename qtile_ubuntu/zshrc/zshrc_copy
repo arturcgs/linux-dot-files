@@ -124,7 +124,7 @@ alias fgrep='fgrep --color=auto'
 alias alacritty-config="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias alacritty-theme-config="$EDITOR ~/.oh-my-zsh/themes/agnoster.zsh-theme"
 alias qtile-config="$EDITOR ~/.config/qtile/config.py"
-alias autostart-config="$EDITOR ~/Scripts/qtile/autostart.sh"
+alias autostart-config="$EDITOR ~/Scripts/qtile/autostart-ultra-wide.sh"
 alias picom-config="$EDITOR ~/.config/qtile/picom.conf"
 alias zshell-config="$EDITOR ~/.zshrc"
 alias rofi-config="$EDITOR ~/.config/rofi/config.rasi"
@@ -140,13 +140,13 @@ alias gdrive="cd /home/artur/HDD/GDrive"
 #alias medpet="cd ~/code/personal/m3dpet"
 
 # run scripts
-alias autostart-run="bash ~/Scripts/qtile/autostart.sh"
+alias autostart-run="bash ~/Scripts/qtile/autostart-ultra-wide.sh"
 alias save-dot-files="sudo bash ~/Scripts/general/save_dot_files.sh"
 alias fix-alacritty="sudo bash ~/Scripts/general/fix_alacritty.sh"
 alias daily-open="bash ~/Scripts/general/daily_run.sh"
 
 # venvs
-alias activate-basic="source venvs/basic/bin/activate"
+alias activate-basic="source ~/venvs/basic/bin/activate"
 
 # conda shortcuts
 alias conda-a="conda activate "

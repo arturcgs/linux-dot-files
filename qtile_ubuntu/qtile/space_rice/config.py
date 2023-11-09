@@ -44,44 +44,23 @@ terminal = 'alacritty'
 # https://icolorpalette.com/410179_8530d1_a25ce0_a473ce_a669db
 
 color_theme = {
-
-    # orange palette 
-
     "font_color": "#ffffff",
-    "background": "#831d16",
-    "selection1": "#831d16",
-    "selection2": "#c42c21",
-    "current_screen_border": "#c42c21",
+    "background": "#a460e0",
+    "selection1": "#361453",
+    "selection2": "#7825b4",
+    "current_screen_border": "#9c4b6d",
     "other_screen_border": "#725f7b",
     "inactive_font_color": "#919191",
-    "this_screen_border": "#2c0a07",
+    "this_screen_border": "#9c4b6d",
     "unfocused_window": "#404040",
 
-    "orange1": "#2c0a07",
-    "orange2": "#57140f",
-    "orange3": "#6d1912",
-    "orange4": "#811818",
-    "orange5": "#971c1c",
-    "orange6": "#ac2020",
-
     # purple palette
-
-    # "font_color": "#ffffff",
-    # "background": "#a460e0",
-    # "selection1": "#361453",
-    # "selection2": "#7825b4",
-    # "current_screen_border": "#9c4b6d",
-    # "other_screen_border": "#725f7b",
-    # "inactive_font_color": "#919191",
-    # "this_screen_border": "#9c4b6d",
-    # "unfocused_window": "#404040",
-
-    # "purple1": "#250d39",
-    # "purple2": "#4a1b73",
-    # "purple3": "#6f29ac",
-    # "purple4": "#934ad3",
-    # "purple5": "#b583e1",
-    # "purple6": "#c6a0e8",
+    "purple1": "#250d39",
+    "purple2": "#4a1b73",
+    "purple3": "#6f29ac",
+    "purple4": "#934ad3",
+    "purple5": "#b583e1",
+    "purple6": "#c6a0e8",
 
     # "purple1": "#250b3b",
     # "purple2": "#4a1677",
@@ -96,7 +75,6 @@ color_theme = {
     # "purple4": "#9620fd",
     # "purple5": "#b767fd",
     # "purple6": "#c88afe",
-
 
 }
 
@@ -177,8 +155,7 @@ keys = [
     Key([mod], "e", lazy.spawn("nautilus")),
 
     # run autostart
-    Key([mod, "control"], "a", lazy.spawn("bash /home/artur/Scripts/qtile/autostart-ultra-wide.sh")),
-    Key([mod, "control"], "s", lazy.spawn("bash /home/artur/Scripts/qtile/autostart-normal.sh"))
+    Key([mod, "control"], "a", lazy.spawn("bash /home/artur/Scripts/qtile/autostart.sh"))
 
 ]
 
@@ -208,15 +185,16 @@ https://www.nerdfonts.com/cheat-sheet
 '''
 
 groups = [
-    Group("1", label="󰖚", layout="max"),
-    Group("2", label="󰻈", layout="treetab"),
-    Group("3", label="󰨷", layout="columns"),
-    Group("4", label="󱈵", layout="columns"),
-    Group("5", label="󰩄", layout="columns"),
-    Group("6", label="󰅄", layout="columns"),
-    Group("7", label="󰉛", layout="columns"),
-    Group("8", label="󰴾", layout="columns"),
-    Group("9", label="", layout="columns"),
+    Group("1", label="", layout="max"),
+    Group("2", label="󰇧", layout="treetab"),
+    Group("3", label="", layout="columns"),
+    Group("4", label="󰑱", layout="columns"),
+    Group("5", label="󱓞", layout="columns"),
+    Group("6", label="", layout="columns"),
+    Group("7", label="", layout="columns"),
+    Group("8", label="", layout="columns"),
+    Group("9", label="", layout="columns"),
+
 ]
 
 # add group hotkeys for numbers
@@ -273,7 +251,6 @@ for g, k in zip(groups, group_numpad_hotkeys):
         ]
     )
 
-
 #### LAYOUT SETTINGS ####
 
 
@@ -285,18 +262,18 @@ layouts = [
 
     layout.Columns(
         margin=5,
-        border_focus=color_theme["orange5"],
+        border_focus=color_theme["purple5"],
         border_normal=color_theme["unfocused_window"],
         border_width=2,
         border_normal_stack=color_theme["font_color"],
         insert_position=1,
     ),
 
-    layout.Floating(border_focus=color_theme["orange5"]),
+    layout.Floating(border_focus=color_theme["purple5"]),
 
     layout.TreeTab(
         bg_color="#262527",
-        active_bg=color_theme['orange2'],
+        active_bg=color_theme['purple2'],
         inactive_fg="#969696",
         inactive_bg="#141414b5",
         panel_width=70,
@@ -331,9 +308,9 @@ def open_pavu():
 
 # General Settings
 widget_defaults = dict(
-    font='JetBrainsMono Nerd Font Mono',
+    font='SpaceMono Nerd Font Mono',
     style='Bold',
-    padding=4,
+    padding=3,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -345,7 +322,7 @@ def get_widgets(primary=False):
     if primary:
         bar_sizes = {
             # GroupBox
-            "group_font": 24,
+            "group_font": 18,
             "group_spacing": 5,
 
             # Current Window Name
@@ -361,12 +338,12 @@ def get_widgets(primary=False):
             "spacer": 6,
 
             # Final widget background color
-            "final_widget_bg_color": color_theme["orange4"]
+            "final_widget_bg_color": color_theme["purple4"]
         }
     else:
         bar_sizes = {
             # GroupBox
-            "group_font": 30,
+            "group_font": 24,
             "group_spacing": 10,
 
             # Current Window Name
@@ -393,11 +370,11 @@ def get_widgets(primary=False):
         # Current Layout
         widget.Spacer(
             length=4,
-            background=color_theme["orange1"],
+            background=color_theme["purple1"],
         ),
 
         widget.CurrentLayoutIcon(
-            background=color_theme["orange1"],
+            background=color_theme["purple1"],
             max_chars=3,
             scale=0.59,
         ),
@@ -406,19 +383,19 @@ def get_widgets(primary=False):
             text="",
             padding=-1,
             fontsize=bar_sizes["text_box"],
-            foreground=color_theme["orange1"],
-            background=color_theme["orange2"],
+            foreground=color_theme["purple1"],
+            background=color_theme["purple2"],
         ),
 
         # GroupBox
         widget.Spacer(
             length=0,
-            background=color_theme["orange2"],
+            background=color_theme["purple2"],
         ),
 
         widget.GroupBox(
             highlight_method="line",
-            background=color_theme["orange2"],
+            background=color_theme["purple2"],
             fontsize=bar_sizes["group_font"],
             spacing=bar_sizes["group_spacing"],
             margin=4,
@@ -427,16 +404,14 @@ def get_widgets(primary=False):
             other_screen_border=color_theme["other_screen_border"],
             active=color_theme["font_color"],
             inactive=color_theme["inactive_font_color"],
-            this_screen_border=color_theme["this_screen_border"],
-            borderwidth=4,
-            disable_drag=True,
+            this_screen_border=color_theme["this_screen_border"]
         ),
 
         widget.TextBox(
             text="",
             padding=-1,
             fontsize=bar_sizes["text_box"],
-            foreground=color_theme["orange2"],
+            foreground=color_theme["purple2"],
             background=color_theme["background"],
         ),
 
@@ -463,7 +438,7 @@ def get_widgets(primary=False):
             text="",
             padding=-1,
             fontsize=bar_sizes["text_box"],
-            foreground=color_theme["orange3"],
+            foreground=color_theme["purple3"],
             background=bar_sizes["final_widget_bg_color"],
         ),
 
@@ -472,23 +447,23 @@ def get_widgets(primary=False):
                 widget.Memory(
                     measure_mem='G',
                     format='Mem: {MemUsed:.1f}{mm}/{MemTotal:.1f}{mm} |',
-                    background=color_theme["orange3"],
+                    background=color_theme["purple3"],
                     foreground=color_theme["font_color"],
                     fontsize=bar_sizes["widget_font"]
                 ),
                 widget.CPU(
                     format='CPU: {freq_current}GHz/{load_percent}% |',
-                    background=color_theme["orange3"],
+                    background=color_theme["purple3"],
                     foreground=color_theme["font_color"],
                     fontsize=bar_sizes["widget_font"]
                 ),
                 widget.ThermalSensor(
-                    background=color_theme["orange3"],
+                    background=color_theme["purple3"],
                     foreground=color_theme["font_color"],
                     fontsize=bar_sizes["widget_font"]
                 )
             ],
-            background=color_theme["orange3"],
+            background=color_theme["purple3"],
             foreground=color_theme["font_color"],
             fontsize=bar_sizes["widget_font"],
             text_closed="Vitals",
@@ -498,7 +473,7 @@ def get_widgets(primary=False):
 
         widget.Spacer(
             length=bar_sizes["spacer"],
-            background=color_theme["orange3"],
+            background=color_theme["purple3"],
         ),
 
         # Battery widget
@@ -506,12 +481,12 @@ def get_widgets(primary=False):
             text="",
             padding=-1,
             fontsize=bar_sizes["text_box"],
-            foreground=color_theme["orange2"],
-            background=color_theme["orange3"],
+            foreground=color_theme["purple2"],
+            background=color_theme["purple3"],
         ),
 
         widget.UPowerWidget(
-            background=color_theme["orange2"],
+            background=color_theme["purple2"],
             battery_height=bar_sizes["battery_height"],
             battery_width=bar_sizes["battery_width"],
             fontsize=bar_sizes["widget_font"]
@@ -520,7 +495,7 @@ def get_widgets(primary=False):
         widget.Battery(
             update_delay=5,
             foreground=color_theme["font_color"],
-            background=color_theme["orange2"],
+            background=color_theme["purple2"],
             fontsize=bar_sizes["widget_font"],
             full_char="",
             charge_char="",
@@ -532,7 +507,7 @@ def get_widgets(primary=False):
 
         widget.Spacer(
             length=bar_sizes["spacer"],
-            background=color_theme["orange2"],
+            background=color_theme["purple2"],
         ),
 
         # Backlight
@@ -543,14 +518,14 @@ def get_widgets(primary=False):
             brightness_file="actual_brightness",
             change_command="brightnessctl s {0}%",
             foreground=color_theme["font_color"],
-            background=color_theme["orange2"],
+            background=color_theme["purple2"],
             fontsize=bar_sizes["widget_font"],
             step=5
         ),
 
         widget.Spacer(
             length=bar_sizes["spacer"],
-            background=color_theme["orange2"],
+            background=color_theme["purple2"],
         ),
 
         # Volume
@@ -558,7 +533,7 @@ def get_widgets(primary=False):
             fmt="󰕾 {}",
             font="SpaceMono Nerd Font",
             foreground=color_theme["font_color"],
-            background=color_theme["orange2"],
+            background=color_theme["purple2"],
             fontsize=bar_sizes["widget_font"],
             mouse_callbacks={'Button1': open_pavu},
             volume_app="gnome-control-center"
@@ -566,7 +541,7 @@ def get_widgets(primary=False):
 
         widget.Spacer(
             length=bar_sizes["spacer"],
-            background=color_theme["orange2"],
+            background=color_theme["purple2"],
         ),
 
         # Date and time
@@ -574,14 +549,14 @@ def get_widgets(primary=False):
             text="",
             padding=-1,
             fontsize=bar_sizes["text_box"],
-            foreground=color_theme["orange1"],
-            background=color_theme["orange2"],
+            foreground=color_theme["purple1"],
+            background=color_theme["purple2"],
         ),
 
         widget.Clock(
             format="%d-%m-%Y %a, %H:%M ",
             foreground=color_theme["font_color"],
-            background=color_theme["orange1"],
+            background=color_theme["purple1"],
             fontsize=bar_sizes["widget_font"],
         ),
     ]
@@ -594,7 +569,7 @@ def get_widgets(primary=False):
                 text="",
                 padding=-1,
                 fontsize=bar_sizes["text_box"],
-                foreground=color_theme["orange4"],
+                foreground=color_theme["purple4"],
                 background=color_theme["background"],
             )
         )
@@ -602,7 +577,7 @@ def get_widgets(primary=False):
         widgets.insert(
             9,
             widget.Systray(
-                background=color_theme["orange4"],
+                background=color_theme["purple4"],
                 padding=5,
                 icon_size=18
             )
@@ -612,7 +587,7 @@ def get_widgets(primary=False):
             10,
             widget.Spacer(
                 length=bar_sizes["spacer"],
-                background=color_theme["orange4"]
+                background=color_theme["purple4"]
             )
         )
     return widgets
@@ -673,7 +648,7 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
     ],
-    border_focus=color_theme["orange5"]
+    border_focus=color_theme["purple5"]
 )
 auto_fullscreen = True
 focus_on_window_activation = "smart"
@@ -702,4 +677,4 @@ wmname = "LG3D"
 @hook.subscribe.startup_once
 def autostart():
     #home = os.path.expanduser("/home/artur/Scripts/qtile/autostart.sh")
-    subprocess.run("/home/artur/Scripts/qtile/autostart-ultra-wide.sh")
+    subprocess.run("/home/artur/Scripts/qtile/autostart.sh")
