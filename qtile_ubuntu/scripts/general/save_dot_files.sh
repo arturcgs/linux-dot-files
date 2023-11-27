@@ -24,8 +24,13 @@ cp /home/artur/Scripts/ufetch/ufetch.sh /home/artur/Documents/linux-dot-files/qt
 ## ESPANSO ##
 cp /home/artur/.config/espanso/match/base.yml /home/artur/Documents/linux-dot-files/qtile_ubuntu/espanso
 
+## DUNST ##
+cp /etc/xdg/dunst/dunstrc /home/artur/Documents/linux-dot-files/qtile_ubuntu/dunst
+
 ## SCRIPTS ##
 cp -r /home/artur/Scripts/* /home/artur/Documents/linux-dot-files/qtile_ubuntu/scripts
 
 ## PICTURES ##
 cp -r /home/artur/Pictures/* /home/artur/Documents/linux-dot-files/qtile_ubuntu/pictures
+
+

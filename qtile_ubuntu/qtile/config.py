@@ -404,6 +404,7 @@ def get_widgets(primary=False):
             background=color_theme["orange1"],
             max_chars=3,
             scale=0.59,
+            custom_icon_paths=["/home/artur/Pictures/icons"]
         ),
 
         widget.TextBox(
