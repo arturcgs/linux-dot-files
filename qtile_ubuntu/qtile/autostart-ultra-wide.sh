@@ -19,6 +19,9 @@ rclone mount mygdrive: /home/artur/HDD/GDrive --daemon
 # run picom
 run picom -b --experimental-backends --config ~/.config/qtile/picom.conf
 
+# Increse key speed via rate change
+xset r rate 300 50 
+
 # run mate-polkit, to be able to save sudo on codium
 run /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 

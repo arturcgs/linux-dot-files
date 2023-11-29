@@ -102,10 +102,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# neo vim alias
+alias nvim='~/.local/bin/nvim'
+
 
 # Make codium the default editor
 
-export EDITOR='codium'
+export EDITOR='nvim'
 export VISUAL='codium'
 
 ### ALIASES ###
@@ -130,7 +133,7 @@ alias autostart-config="$EDITOR ~/Scripts/qtile/autostart-ultra-wide.sh"
 alias picom-config="$EDITOR ~/.config/qtile/picom.conf"
 alias zshell-config="$EDITOR ~/.zshrc"
 alias rofi-config="$EDITOR ~/.config/rofi/config.rasi"
-alias dunst-config="$EDITOR ~/etc/xdg/dunst/dunstrc"
+alias dunst-config="$EDITOR /etc/xdg/dunst/dunstrc"
 
 # important folders
 alias doc="cd ~/HDD/Documents"
@@ -140,7 +143,7 @@ alias 100days="cd /home/artur/code/100-days-of-code"
 alias masters="cd /home/artur/code/masters-project/main_project"
 alias dot-files="cd /home/artur/Documents/linux-dot-files/qtile_ubuntu"
 alias gdrive="cd /home/artur/HDD/GDrive"
-#alias medpet="cd ~/code/personal/m3dpet"
+alias medpet="cd /home/artur/code/m3dpet"
 
 # run scripts
 alias autostart-run="bash ~/Scripts/qtile/autostart-ultra-wide.sh"
@@ -149,7 +152,8 @@ alias fix-alacritty="sudo bash ~/Scripts/general/fix_alacritty.sh"
 alias daily-open="bash ~/Scripts/general/daily_run.sh"
 
 # venvs
-alias activate-basic="source ~/venvs/basic/bin/activate"
+alias venv-basic="source ~/venvs/basic/bin/activate"
+alias basic-pip="/home/artur/venvs/basic/bin/pip"
 
 # conda shortcuts
 alias conda-a="conda activate "
@@ -163,6 +167,9 @@ alias kd="source /home/artur/Scripts/fzf/explorer.sh"
 
 # arandr
 alias display="arandr"
+
+# pomodoro
+alias pomodoro="bash /home/artur/Scripts/general/pomodoro.sh"
 
 # don't stay stuck in terminal
 alias nt="setsid"
@@ -193,3 +200,7 @@ fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

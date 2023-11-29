@@ -27,6 +27,9 @@ cp /home/artur/.config/espanso/match/base.yml /home/artur/Documents/linux-dot-fi
 ## DUNST ##
 cp /etc/xdg/dunst/dunstrc /home/artur/Documents/linux-dot-files/qtile_ubuntu/dunst
 
+## NEOVIM ##
+cp -r /home/artur/.config/nvim/* /home/artur/Documents/linux-dot-files/qtile_ubuntu/nvim
+
 ## SCRIPTS ##
 cp -r /home/artur/Scripts/* /home/artur/Documents/linux-dot-files/qtile_ubuntu/scripts
 
