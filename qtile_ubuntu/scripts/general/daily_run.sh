@@ -10,6 +10,9 @@ curl https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage \
       -Lo ~/.local/bin/nvim --create-dirs
 chmod u+x ~/.local/bin/nvim
 
+# update e upgrade (old) (n gostei mto do nala pq eu preciso dar yes)
+#sudo nala update
+#sudo nala upgrade
+
 # update e upgrade
-sudo nala update
-sudo nala upgrade
+sudo apt update -y && sudo apt upgrade -y

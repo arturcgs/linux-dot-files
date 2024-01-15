@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Sleep for 25 minutes
-sleep 5s
+sleep 25m
 
 # Send a notification to both screens
 notify-send "Aviso" "Final da Sessão de trabalho!"
@@ -10,7 +10,7 @@ notify-send "Aviso" "Final da Sessão de trabalho!"
 paplay /home/artur/Documents/sounds/alarm-clock.wav
 
 # Sleep for 6 minutes
-sleep  5s
+sleep  6m
 
 # Send a notification to both screens
 notify-send "Aviso" "Final da pausa!"
